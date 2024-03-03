@@ -1,6 +1,6 @@
 # College ERP
 
-An ERP system for educational institutes. Built with Frappe.
+An ERP system for educational institutes. Built with [Frappe](https://frappeframework.com/).
 
 ## Setup
 
@@ -25,15 +25,15 @@ An ERP system for educational institutes. Built with Frappe.
 
 1. Clone the `frappe_docker` repository
    ```sh
-   git clone https://github.com/frappe/frappe_docker.git
+   git clone https://github.com/pokhiii/college-erp.git
    ```
 2. Move inside the cloned repository
    ```sh
    cd frappe_docker
    ```
-3. Create and start containers defined in `devcontainer-example/docker-compose.yml`.
+3. Create and start containers defined in `college-erp/docker-compose.yml`.
    ```sh
-   docker compose -f devcontainer-example/docker-compose.yml up
+   docker compose -f college-erp/docker-compose.yml up
    ```
 4. Start interactive shell session within the Frappe container
    1. Find the name of container
@@ -43,5 +43,5 @@ An ERP system for educational institutes. Built with Frappe.
       ![image](https://github.com/pokhiii/college-erp/assets/11808845/1b81ee46-800c-4765-a605-5e05914a5b46)
    2. Start interactive shell
       ```sh
-      docker exec -it devcontainer-example-frappe-1 /bin/sh
+      docker exec -it college-erp-frappe-1 /bin/sh
       ```
