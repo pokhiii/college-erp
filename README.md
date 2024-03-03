@@ -1,60 +1,55 @@
-[![Build Stable](https://github.com/frappe/frappe_docker/actions/workflows/build_stable.yml/badge.svg)](https://github.com/frappe/frappe_docker/actions/workflows/build_stable.yml)
-[![Build Develop](https://github.com/frappe/frappe_docker/actions/workflows/build_develop.yml/badge.svg)](https://github.com/frappe/frappe_docker/actions/workflows/build_develop.yml)
+# College ERP
 
-Everything about [Frappe](https://github.com/frappe/frappe) and [ERPNext](https://github.com/frappe/erpnext) in containers.
+An ERP system for educational institutes. Built with [Frappe](https://frappeframework.com/).
 
-# Getting Started
+## Setup
 
-To get started you need [Docker](https://docs.docker.com/get-docker/), [docker-compose](https://docs.docker.com/compose/), and [git](https://docs.github.com/en/get-started/getting-started-with-git/set-up-git) setup on your machine. For Docker basics and best practices refer to Docker's [documentation](http://docs.docker.com).
-After that, clone this repo:
+### Development environment
 
-```sh
-git clone https://github.com/frappe/frappe_docker
-cd frappe_docker
-```
+#### Pre-requisites
 
-### Try in Play With Docker
+1. Docker
+   ```sh
+   docker -v   # Check if Docker is installed.
+   ```
+2. [Docker Compose](https://docs.docker.com/compose/)
+   ```sh
+   docker compose version  # Check if Docker Compose is installed.
+   ```
+3. Git
+   ```sh
+   git -v # Check if Git is installed.
+   ```
 
-<a href="https://labs.play-with-docker.com/?stack=https://raw.githubusercontent.com/frappe/frappe_docker/main/pwd.yml">
-  <img src="https://raw.githubusercontent.com/play-with-docker/stacks/master/assets/images/button.png" alt="Try in PWD"/>
-</a>
+#### Installation
 
-Wait for 5 minutes for ERPNext site to be created or check `create-site` container logs before opening browser on port 8080. (username: `Administrator`, password: `admin`)
-
-# Documentation
-
-### [Production](#production)
-
-- [List of containers](docs/list-of-containers.md)
-- [Single Compose Setup](docs/single-compose-setup.md)
-- [Environment Variables](docs/environment-variables.md)
-- [Single Server Example](docs/single-server-example.md)
-- [Setup Options](docs/setup-options.md)
-- [Site Operations](docs/site-operations.md)
-- [Backup and Push Cron Job](docs/backup-and-push-cronjob.md)
-- [Port Based Multi Tenancy](docs/port-based-multi-tenancy.md)
-- [Migrate from multi-image setup](docs/migrate-from-multi-image-setup.md)
-- [running on linux/mac](docs/setup_for_linux_mac.md)
-
-### [Custom Images](#custom-images)
-
-- [Custom Apps](docs/custom-apps.md)
-- [Build Version 10 Images](docs/build-version-10-images.md)
-
-### [Development](#development)
-
-- [Development using containers](docs/development.md)
-- [Bench Console and VSCode Debugger](docs/bench-console-and-vscode-debugger.md)
-- [Connect to localhost services](docs/connect-to-localhost-services-from-containers-for-local-app-development.md)
-
-### [Troubleshoot](docs/troubleshoot.md)
-
-# Contributing
-
-If you want to contribute to this repo refer to [CONTRIBUTING.md](CONTRIBUTING.md)
-
-This repository is only for container related stuff. You also might want to contribute to:
-
-- [Frappe framework](https://github.com/frappe/frappe#contributing),
-- [ERPNext](https://github.com/frappe/erpnext#contributing),
-- [Frappe Bench](https://github.com/frappe/bench).
+1. Clone the repository
+   ```sh
+   git clone https://github.com/pokhiii/college-erp.git
+   ```
+2. Move inside the cloned repository
+   ```sh
+   cd college-erp
+   ```
+3. Create and start containers defined in `college-erp/docker-compose.yml`.
+   ```sh
+   docker compose -f college-erp/docker-compose.yml up
+   ```
+4. Start interactive shell session within the Frappe container
+   1. Find the name of container
+      ```sh
+      docker ps
+      ```
+      ![image](https://github.com/pokhiii/college-erp/assets/11808845/4374419c-217c-42eb-b6e9-38020221c022)
+   2. Start interactive shell
+      ```sh
+      docker exec -it college-erp-frappe-1 /bin/sh
+      ```
+5. Inside the container
+   ```sh
+   cd frappe-bench
+   ```
+6. Start the app
+   ```sh
+   bench start
+   ```

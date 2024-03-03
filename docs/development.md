@@ -27,10 +27,10 @@ git clone https://github.com/frappe/frappe_docker.git
 cd frappe_docker
 ```
 
-Copy example devcontainer config from `devcontainer-example` to `.devcontainer`
+Copy example devcontainer config from `college-erp` to `.devcontainer`
 
 ```shell
-cp -R devcontainer-example .devcontainer
+cp -R college-erp .devcontainer
 ```
 
 Copy example vscode config for devcontainer from `development/vscode-example` to `development/.vscode`. This will setup basic configuration for debugging.
