@@ -6,7 +6,7 @@ An ERP system for educational institutes. Built with [Frappe](https://frappefram
 
 ### Development environment
 
-#### Pre-requisites
+#### Prerequisites
 
 1. Docker
    ```sh
@@ -45,11 +45,15 @@ An ERP system for educational institutes. Built with [Frappe](https://frappefram
       ```sh
       docker exec -it college-erp-frappe-1 /bin/sh
       ```
-5. Inside the container
+5. Set up `frappe-bench` directory and install erpnext app inside it
+   ```sh
+    python installer.py
+    ```
+6. Inside the container
    ```sh
    cd frappe-bench
    ```
-6. Start the app
+7. Start the app
    ```sh
    bench start
    ```
