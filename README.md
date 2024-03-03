@@ -23,13 +23,13 @@ An ERP system for educational institutes. Built with [Frappe](https://frappefram
 
 #### Installation
 
-1. Clone the `frappe_docker` repository
+1. Clone the repository
    ```sh
    git clone https://github.com/pokhiii/college-erp.git
    ```
 2. Move inside the cloned repository
    ```sh
-   cd frappe_docker
+   cd college-erp
    ```
 3. Create and start containers defined in `college-erp/docker-compose.yml`.
    ```sh
@@ -40,8 +40,16 @@ An ERP system for educational institutes. Built with [Frappe](https://frappefram
       ```sh
       docker ps
       ```
-      ![image](https://github.com/pokhiii/college-erp/assets/11808845/1b81ee46-800c-4765-a605-5e05914a5b46)
+      ![image](https://github.com/pokhiii/college-erp/assets/11808845/4374419c-217c-42eb-b6e9-38020221c022)
    2. Start interactive shell
       ```sh
       docker exec -it college-erp-frappe-1 /bin/sh
       ```
+5. Inside the container
+   ```sh
+   cd frappe-bench
+   ```
+6. Start the app
+   ```sh
+   bench start
+   ```
